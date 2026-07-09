@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  <div class="bg-white p-4 shadow-sm rounded">
+    <h1><%= @flat.name %></h1>
+    <p class="text-muted"><%= @flat.address %></p>
+    <hr>
+
+    <h3>About the flat</h3>
+    <p><%= @flat.description %></p>
+
+    <div class="d-flex text-muted gap-4 my-4">
+      <span><i class="fa-solid fa-users"></i> <strong><%= @flat.number_of_guests %></strong> guests</span>
+      <span><i class="fa-solid fa-euro-sign"></i> <strong><%= @flat.price_per_night %></strong> / night</span>
+    </div>
+
+    <div class="d-flex gap-2 border-top pt-3">
+      <%= link_to 'Back to list', flats_path, class: 'btn btn-outline-secondary' %>
+      <%= link_to 'Edit this flat', edit_flat_path(@flat), class: 'btn btn-outline-warning' %>
+      <%= link_to 'Delete', flat_path(@flat), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-outline-danger' %>
+    </div>
+  </div>
+</div>
